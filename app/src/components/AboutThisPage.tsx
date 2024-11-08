@@ -23,7 +23,10 @@ const AboutThisPage: React.FC<AboutProps> = ({ aboutRef }) => (
       </Heading>
       <Box w={{ md: "2/3" }} textAlign="center">
         <Text color="blue.100" fontSize="lg" lineHeight="relaxed">
-          ポートフォリオサイトです
+          ここはエンジニアT.Iのポートフォリオサイトです。<br />
+          これまでに携わったプロジェクト、身につけたスキルをまとめています。<br />
+          あなたに、私のことをもっと深く知ってほしいと思い作りました。<br />
+          どうぞお茶でも飲みながらごゆるりとサイト内を散策してください。
         </Text>
       </Box>
     </Container>

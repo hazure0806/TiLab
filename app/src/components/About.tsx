@@ -8,71 +8,141 @@ import {
   Container,
   Image,
   Link,
+  Stack,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
+const ProfileImage = require("../assets/IMG_4759.PNG");
 
 const About: React.FC = () => (
   <Box
     as="section"
     id="about"
-    minHeight="100vh" // 画面の高さを100vhに設定
-    py={20}
+    minH="100vh"
+    py={16}
     bgGradient="linear(to-br, blue.800, purple.800)"
-    display="flex" // Flexboxを使用
-    justifyContent="center" // 横方向の中央揃え
-    alignItems="center" // 縦方向の中央揃え
+    display="flex"
+    alignItems="center"
   >
-    <Container maxW="container.lg" textAlign="center">
-      <Heading as="h2" size="2xl" mb={10} color="white">
-        About me
-      </Heading>
-      <Flex direction={{ base: "column", md: "row" }} alignItems="center">
-        <Box mb={{ base: 10, md: 0 }} w={{ md: "1/3" }}>
-          <Image
-            src="/api/placeholder/200/200"
-            alt="Profile"
-            rounded="full"
-            mx="auto"
-            borderWidth={4}
-            borderColor="blue.300"
-          />
-        </Box>
-        <Box w={{ md: "2/3" }}>
-          <Text color="blue.100" fontSize="lg" lineHeight="relaxed">
-            石川県出身のエンジニア。高専で機械工学、技科大で材料工学を学んだのち、メーカーで
-            樹脂フィラー材料開発・生産に従事。その後ITの魅力にひかれ、31才でIT業界へ転職。運用・
-            テクニカルサポートからキャリアをスタートし、AWSクラウドサーバー構築、Webページ作
-            成、Python/djangoのツール開発など、インフラからフロントサイドまで幅広く業務を経験し
-            てきました。
-          </Text>
-          <VStack mt={6} justifyContent="center" spacing={4}>
-            <Link
-              href="#"
-              isExternal
-              color="white"
-              _hover={{ color: "blue.300" }}
+    <Container maxW="container.xl" px={{ base: 6, md: 8 }}>
+      <VStack spacing={12}>
+        <Heading
+          as="h2"
+          size="2xl"
+          color="white"
+          textAlign="center"
+          fontWeight="bold"
+        >
+          About me
+        </Heading>
+        
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          align="center"
+          justify="center"
+          gap={{ base: 8, md: 12 }}
+          w="full"
+        >
+          <Box
+            flexShrink={0}
+            w={{ base: "200px", md: "250px" }}
+            h={{ base: "200px", md: "250px" }}
+            position="relative"
+          >
+            <Image
+              src={ProfileImage}
+              alt="Profile"
+              rounded="full"
+              w="100%"
+              h="100%"
+              objectFit="cover"
+              borderWidth={4}
+              borderColor="blue.300"
+              boxShadow="xl"
+            />
+          </Box>
+
+          <Box flex="1" maxW={{ md: "600px" }}>
+            <Text
+              color="blue.50"
+              fontSize={{ base: "md", md: "lg" }}
+              lineHeight="tall"
+              textAlign={{ base: "center", md: "left" }}
+              mb={8}
             >
-              <FaGithub size={24} />
-            </Link>
-            <Link
-              href="#"
-              isExternal
-              color="white"
-              _hover={{ color: "blue.300" }}
+              愛知県出身のエンジニア。前職は病院で管理栄養士として勤務していましたが、
+              幅広く情報を発信できるエンジニアになるために転職を決意しました。SESで
+              Iotを活用したシステム開発に携わり、AWSを使用したサーバーレスアーキテクチャの構築などを主な業務としておりました。
+              現在は食品関係の自社開発企業でアプリエンジニアとして勤務しています。趣味は謎解きとボードゲームです。
+            </Text>
+
+            <Stack
+              direction={{ base: "column", sm: "row" }}
+              spacing={{ base: 4, md: 6 }}
+              justify={{ base: "center", md: "flex-start" }}
+              align="center"
             >
-              <FaLinkedin size={24} />
-            </Link>
-            <Link
-              href="#"
-              isExternal
-              color="white"
-              _hover={{ color: "blue.300" }}
-            >
-              <FaEnvelope size={24} />
-            </Link>
-          </VStack>
-        </Box>
-      </Flex>
+              <Link
+                href="https://github.com/hazure0806"
+                isExternal
+                display="flex"
+                alignItems="center"
+                px={4}
+                py={2}
+                bg="whiteAlpha.200"
+                rounded="md"
+                color="white"
+                _hover={{
+                  bg: "whiteAlpha.300",
+                  transform: "translateY(-2px)",
+                  transition: "all 0.2s",
+                }}
+              >
+                <FaGithub size={20} />
+                <Text ml={2}>GitHub</Text>
+              </Link>
+              <Link
+                href="#"
+                isExternal
+                display="flex"
+                alignItems="center"
+                px={4}
+                py={2}
+                bg="whiteAlpha.200"
+                rounded="md"
+                color="white"
+                _hover={{
+                  bg: "whiteAlpha.300",
+                  transform: "translateY(-2px)",
+                  transition: "all 0.2s",
+                }}
+              >
+                <FaLinkedin size={20} />
+                <Text ml={2}>LinkedIn</Text>
+              </Link>
+              <Link
+                href="#"
+                isExternal
+                display="flex"
+                alignItems="center"
+                px={4}
+                py={2}
+                bg="whiteAlpha.200"
+                rounded="md"
+                color="white"
+                _hover={{
+                  bg: "whiteAlpha.300",
+                  transform: "translateY(-2px)",
+                  transition: "all 0.2s",
+                }}
+              >
+                <FaEnvelope size={20} />
+                <Text ml={2}>Email</Text>
+              </Link>
+            </Stack>
+          </Box>
+        </Flex>
+      </VStack>
     </Container>
   </Box>
 );
