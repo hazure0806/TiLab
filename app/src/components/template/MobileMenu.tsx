@@ -9,7 +9,7 @@ interface MobileMenuProps {
 
 const MotionBox = motion(Box);
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => (
+export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => (
   <MotionBox
     position="fixed"
     top={0}
@@ -40,4 +40,3 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => (
   </MotionBox>
 );
 
-export default MobileMenu;

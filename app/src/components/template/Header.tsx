@@ -1,14 +1,14 @@
 import React from "react";
 import { Box, Flex, Link, IconButton, Container, Image } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import logoSvg from "../assets/ti-lab-space-logo.svg";
+import logoSvg from "../../assets/ti-lab-space-logo.svg";
 
 interface HeaderProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
+export const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
   const scrollToElement = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -72,5 +72,3 @@ const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
     </Box>
   );
 };
-
-export default Header;
